@@ -1,0 +1,13 @@
+{
+  "location": "01532",
+  "weather_announce": false,
+  "measurement": "fahrenheit",
+  "weather_refresh_minutes": 15,
+  "clock_size": 200,
+  "clock_size_choices": [
+    200,
+    250,
+    300,
+    400
+  ]
+}

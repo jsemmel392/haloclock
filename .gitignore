@@ -1,0 +1,17 @@
+# Block the archives globally
+Archive/
+achive/
+
+# Block the build folders
+target/
+HaloClock/
+
+# Block OS junk
+.git/
+Thumbs.db
+sync.cmd
+README.txt
+HaloClock.exe
+HaloClock.zip
+index.html
+sync.cmd
