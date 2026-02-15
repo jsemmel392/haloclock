@@ -1,4 +1,4 @@
-# Halo Clock
+# Halo Clock v1.4.2
 
 Halo Clock gives you the time, temperature, and real moon phases in a specialized terminal HUD. Click the clock and it announces the time out loud.
 
