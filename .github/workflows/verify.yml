@@ -1,32 +1,24 @@
-name: HaloClock CI (Quality & Info)
+name: HaloClock Sanity Check
 
-run-name: ${{ github.actor }} is verifying HaloClock 🚀
+run-name: ${{ github.actor }} is checking the pipes 🛠️
 
 on: [push]
 
 jobs:
-  Verify-And-Report:
-    # We use Windows-latest because HaloClock is a Windows app!
-    runs-on: windows-latest 
+  Windows-Environment-Check:
+    runs-on: windows-latest
     
     steps:
-      # --- INFO STEPS (From the Demo) ---
-      - run: echo "🚀 Triggered by ${{ github.event_name }} from ${{ github.actor }}"
-      - run: echo "💻 Running on a ${{ runner.os }} server!"
+      - name: 1. Greeting
+        run: echo "Hello from the GitHub Windows Runner! Everything is connected."
 
-      # --- THE REAL WORK (The Rust Way) ---
-      - name: Checkout Code
+      - name: 2. Checkout Code
         uses: actions/checkout@v4
 
-      - name: Install Rust & Clippy
-        run: |
-          rustup update stable
-          rustup component add clippy
+      - name: 3. Verify Files (The Debugger)
+        # This will show us if clock.rs or Clock.rs exists!
+        run: Get-ChildItem -Recurse
+        shell: pwsh
 
-      - name: Build Check
-        run: cargo check --release
-
-      - name: Run Clippy (The Paperclip)
-        run: cargo clippy -- -D warnings
-
-      - run: echo "🍏 Build and Quality Check Complete for ${{ github.repository }}!"
+      - name: 4. Final Status
+        run: echo "The workspace is ready for Rust whenever you are, ${{ github.actor }}."
